@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 8080
 app.use(bodyParser.json());
 app.use(cors());
 var API_KEY = "RGAPI-1b8d6772-5bfe-450d-afa3-58a2a34360b7"
+var DB_KEY = "mongodb+srv://bluerare:manuel09!@vespacluster.4zhfz.mongodb.net/TFTapp?retryWrites=true&w=majority"
 var tftSchema = mongoose.Schema({
     id:String,
     accountId:String,
@@ -35,7 +36,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 var Data = mongoose.model('Data', tftSchema)
 
-mongoose.connect(`mongodb+srv://bluerare:manuel09!@vespacluster.4zhfz.mongodb.net/TFTapp?retryWrites=true&w=majority`,function(err) {
+mongoose.connect(DB_KEY,function(err) {
     if(err) throw err;
 
     console.log("Database has successfully connected")
