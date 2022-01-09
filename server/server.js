@@ -1,12 +1,10 @@
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser');
 
-var db =  mongoose.connection
-const axios = require('../client/src/node_modules/axios')
+var axios = require('axios')
 var express = require("express");
 const cors = require('cors');
 const path = require('path')
-
 var app = express();
 
 const PORT = process.env.PORT || 8080
@@ -25,6 +23,7 @@ var tftSchema = mongoose.Schema({
     tftLp:String
 
 })
+
 if (process.env.NODE_ENV === 'production') {
     // Serve any static files
     app.use(express.static(path.join(__dirname, '../client/build')));
@@ -40,12 +39,13 @@ mongoose.connect(`mongodb+srv://bluerare:manuel09!@vespacluster.4zhfz.mongodb.ne
     if(err) throw err;
 
     console.log("Database has successfully connected")
+    
 
 })
 
 
 app.get('/',function(req,res) {
-   res.send("Yo")
+   
 })
     
 app.get('/tft-tournament',function(req,res) {
