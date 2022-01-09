@@ -48,10 +48,10 @@ export default class LeaderBoard extends React.Component {
 
                     </div>
 
-                    <button disabled = {this.state.load} className="btn btn-primary" 
+                    <button className="btn btn-primary" 
                     onClick={
                         ()=>{this.loadData()
-                        this.setState({load:true})
+                        
                     }
                     }> 
                     Load Data</button>
@@ -81,7 +81,7 @@ export default class LeaderBoard extends React.Component {
                                         return(
                                             <div className = "mx-auto justify-content-center text-center rounded border border-danger"
                                             style={{maxWidth:"500px", minWidth:"300px"}} key={item.id}>
-                                                <li className ="list-group-item bg-transperant bg dark">
+                                                <li className ="list-group-item bg-transperant bg-dark">
 
                                                     <p className ="text-light m-0">{item.name}</p>
                                                     <p className ="text-danger m-0">{item.tftTier + " " + item.tftRank}</p>
@@ -107,7 +107,7 @@ export default class LeaderBoard extends React.Component {
                                         return(
                                             <div className = "mx-auto justify-content-center text-center rounded border border-primary"
                                             style={{maxWidth:"500px", minWidth:"300px"}} key={item.id}>
-                                                <li className ="list-group-item bg-transperant bg dark">
+                                                <li className ="list-group-item bg-transperant bg-dark">
 
                                                     <p className ="text-light m-0">{item.name}</p>
                                                     <p className ="text-primary m-0">{item.tftTier + " " + item.tftRank}</p>
@@ -134,7 +134,7 @@ export default class LeaderBoard extends React.Component {
                                         return(
                                             <div className = "mx-auto justify-content-center text-center rounded border border-info"
                                             style={{maxWidth:"500px", minWidth:"300px"}} key={item.id}>
-                                                <li className ="list-group-item bg-transperant bg dark">
+                                                <li className ="list-group-item bg-transperant bg-dark">
 
                                                     <p className ="text-light m-0">{item.name}</p>
                                                     <p className ="text-info m-0">{item.tftTier + " " + item.tftRank}</p>
@@ -161,7 +161,7 @@ export default class LeaderBoard extends React.Component {
                                         return(
                                             <div className = "mx-auto justify-content-center text-center rounded border border-warning"
                                             style={{maxWidth:"500px", minWidth:"300px"}} key={item.id}>
-                                                <li className ="list-group-item bg-transperant bg dark">
+                                                <li className ="list-group-item bg-transperant bg-dark">
 
                                                     <p className ="text-light m-0">{item.name}</p>
                                                     <p className ="text-warning m-0">{item.tftTier + " " + item.tftRank}</p>
@@ -187,7 +187,7 @@ export default class LeaderBoard extends React.Component {
                                         return(
                                             <div className = "mx-auto justify-content-center text-center rounded border border-muted"
                                             style={{maxWidth:"500px", minWidth:"300px"}} key={item.id}>
-                                                <li className ="list-group-item bg-transperant bg dark">
+                                                <li className ="list-group-item bg-transperant bg-dark">
 
                                                     <p className ="text-light m-0">{item.name}</p>
                                                     <p className ="text-muted m-0">{item.tftTier + " " + item.tftRank}</p>
