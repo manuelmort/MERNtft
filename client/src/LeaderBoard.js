@@ -20,12 +20,16 @@ export default class LeaderBoard extends React.Component {
                 this.setState({players:res.data})
                 console.log(res.data)
                 }
-            )	
+            ).catch((err) =>{
+                console.log(err)
+            })
     }
     refreshData() {
         axios.post("/tft-tournament").then(
             console.log("Data refreshed")
-        )
+        ).catch((err) =>{
+            console.log(err)
+        })
     }
 
     render(){
