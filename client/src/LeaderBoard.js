@@ -37,7 +37,7 @@ export default class LeaderBoard extends React.Component {
         return(
             <div>
                 <div className = "container text-center pt-5">
-                    <div classname ="container text-center pt-3">
+                    <div className ="container text-center pt-3">
 
                         <h3 className="text-center text-light mt-1">
                             <div className="p-1 text-light">
