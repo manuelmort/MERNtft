@@ -10,7 +10,7 @@ var app = express();
 const PORT = process.env.PORT || 8080
 app.use(bodyParser.json());
 app.use(cors());
-var API_KEY = "RGAPI-7c9ec1a0-0f2c-4cae-b4ad-6aa7b241c48f"
+var API_KEY = "RGAPI-28e79234-0d71-4557-b428-de6552a965a5"
 var DB_KEY = "mongodb+srv://bluerare:manuel09!@vespacluster.4zhfz.mongodb.net/TFTapp?retryWrites=true&w=majority"
 var tftSchema = mongoose.Schema({
     id:String,
