@@ -56,13 +56,7 @@ export default class LeaderBoard extends React.Component {
                     }> 
                     Load Data</button>
 
-                    <button disabled = {this.state.refresh}className = "btn btn-danger" 
-                    onClick= {
-                        ()=> {
-                          this.refreshData()
-                          this.setState({refresh:true})
-                    }
-                    }> Refresh Data</button>
+                   
                     
                 </div>
 
@@ -201,6 +195,7 @@ export default class LeaderBoard extends React.Component {
                         </ol>
                     </div>
                 </div>
+                <p className="text-muted">Note: Rank data will refresh every 15 minutes</p>
             </div>
         )
     }

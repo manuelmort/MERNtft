@@ -10,7 +10,7 @@ var app = express();
 const PORT = process.env.PORT || 8080
 app.use(bodyParser.json());
 app.use(cors());
-var API_KEY = "RGAPI-28e79234-0d71-4557-b428-de6552a965a5"
+var API_KEY = "RGAPI-a77acd48-ffdf-4f1d-8253-58cd7cffb840"
 var DB_KEY = "mongodb+srv://bluerare:manuel09!@vespacluster.4zhfz.mongodb.net/TFTapp?retryWrites=true&w=majority"
 var tftSchema = mongoose.Schema({
     id:String,
@@ -40,7 +40,9 @@ mongoose.connect(DB_KEY,function(err) {
     if(err) throw err;
 
     console.log("Database has successfully connected")
-    
+
+    addingData();
+   
 
 })
 
@@ -58,16 +60,6 @@ app.get('/tft-tournament',function(req,res) {
     
    
 })
-app.post('/tft-tournament' ,function(req,res){
-    //this post will delete documents and readd them note:Data.remove({}) might be bad practice
-    Data.remove({},function(res,req) {
-
-        console.log("Data has been removed")
-
-        addingData();
-    })
-
-})
 
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`)
@@ -77,7 +69,13 @@ app.listen(PORT, () => {
 
 
 function addingData() {
-    console.log("Now adding api data into the DB")
+    Data.remove({},function(res,req) {
+
+        
+
+    })
+    
+    
     var rank
     var tier
     var lp
@@ -103,7 +101,10 @@ function addingData() {
             console.log(err)
         })
     })
+    console.log("Refreshing api Data")
 
+    setTimeout(addingData,900000)
+    
 }
 
 
